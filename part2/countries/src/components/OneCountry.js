@@ -3,9 +3,10 @@ import axios from "axios";
 
 const OneCountry = ({country}) => {
     const [weather, setWeather] = useState('')
+    const API_KEY = '07824087311c5be5baf42f20fbbb2c05'
     useEffect(() => {
         axios
-            .get(`https://api.openweathermap.org/data/2.5/onecall?lat=${country.capitalInfo.latlng[0]}&lon=${country.capitalInfo.latlng[1]}&appid=${process.env.REACT_APP_WEATHER_API_KEY}&units=metric`)
+            .get(`https://api.openweathermap.org/data/2.5/onecall?lat=${country.capitalInfo.latlng[0]}&lon=${country.capitalInfo.latlng[1]}&appid=${API_KEY}&units=metric`)
             .then(response => {
                 setWeather(response.data)
             })
